@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   # Create the routes for users except the route "new" because is already assigned
   resources :users, except: [:new]
 
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
 end
